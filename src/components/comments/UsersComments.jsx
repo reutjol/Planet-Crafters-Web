@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../../styles/UsersComments.css";
-import SectionTitle from "../common/SectionTitle";
+import "../../styles/Comments.css";
 const API_URL = process.env.REACT_APP_API_URL;
 
 const fetchData = async () => {
   const response = await axios.get(API_URL);
   return response.data.items;
 };
-export default function UsersComments({ refreshTrigger }) {
+export default function UsersComments() {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -29,7 +28,7 @@ export default function UsersComments({ refreshTrigger }) {
     };
 
     load();
-  }, [refreshTrigger]);
+  }, []);
 
   if (loading) {
     return (
@@ -52,8 +51,6 @@ export default function UsersComments({ refreshTrigger }) {
   }
 
   return (
-    <div className="comments-page">
-      <SectionTitle>Comments</SectionTitle>
       <div className="comments-box">
         {comments.map((comment) => (
           <div key={comment.id} className="comment-row">
@@ -74,6 +71,5 @@ export default function UsersComments({ refreshTrigger }) {
           </div>
         ))}
       </div>
-    </div>
   );
 }

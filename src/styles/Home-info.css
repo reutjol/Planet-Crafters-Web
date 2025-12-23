@@ -1,0 +1,122 @@
+/* ===== About ===== */
+
+.about-section {
+  text-align: center;
+  padding: 80px 20px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+  
+}
+
+.about {
+  font-family: 'Segoe UI';
+  line-height: 1.7;
+  max-width: 900px;
+  color: #e7e7e7;
+}
+
+.text1{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.text2{
+    font-size: 1.1rem;
+}
+
+.text3{
+    font-size: 1rem;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+/* ===== Game Title ===== */
+
+.game-title {
+  display: flex;
+  justify-content: center;  
+  align-items: center;        
+  height: 100vh;             
+  width: 100%;                
+}
+
+.img {
+  max-width: 90%;           
+  height: auto;
+}
+
+
+/* ===== Overview ===== */
+
+.planet-intro {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  color: #fff;
+}
+
+.planet-copy {
+  max-width: 560px;
+}
+
+.planet-title {
+  margin: 0 0 20px 0;
+  font-family: "Bungee", 'Segoe UI';
+  font-size: clamp(35px, 5vw, 45px);
+  line-height: 0.95;
+  letter-spacing: 0.5px;
+  width: 100vh;
+}
+
+.planet-text {
+  margin: 0;
+  font-size: clamp(16px, 1.6vw, 22px);
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.planet-auto-wrap {
+  width: 300px;
+  height: 340px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.planet-rotator {
+  width: 100%;
+  height: 100%;
+  animation: spin 18s linear infinite;
+}
+
+.planet-auto {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+.planet-auto.in { opacity: 1; transform: scale(1); }
+.planet-auto.out { opacity: 0; transform: scale(0.96); }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.store-container{
+  display: flex;
+  margin-top: 60px;
+}
+
+.store-img{
+  height: 60px;
+  margin: 0 10px;
+}
+
+
+

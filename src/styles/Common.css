@@ -1,0 +1,98 @@
+/* ===== Header ===== */
+
+.custom-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+.img-logo {
+  width: 150px;
+  height: auto;
+}
+
+.img-icon{
+    width: 40px;
+    height: auto;
+}
+
+.profile-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.profile-check {
+  position: absolute;
+  bottom: -2px;
+  right: -6px;
+  color: #22c55e; 
+  font-size: 18px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    font-family: 'Bungee', sans-serif;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* ===== Section Title ===== */
+
+.about-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  font-family: 'Bungee';
+}
+
+.line {
+  height: 2px;
+  width: 100px;
+  background: #ffffff55;
+  display: inline-block;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffffff55;
+  margin: 0;
+}
+

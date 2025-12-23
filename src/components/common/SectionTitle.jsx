@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/SectionTitle.css";
+import "../../styles/Common.css";
 
 export default function SectionTitle({ children }) {
   return (

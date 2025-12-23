@@ -1,6 +1,6 @@
 import React from "react";
 import img from "../../assets/home.png";
-import "../../styles/GameTitle.css";
+import "../../styles/Home-info.css";
 
 export default function GameTitle() {
   return (
