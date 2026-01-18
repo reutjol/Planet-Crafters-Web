@@ -1,26 +1,17 @@
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../../styles/Comments.css";
 import React from "react";
-import axios from "axios";
-import { ProfileContext } from "../common/ProfileContext.jsx";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useApi } from "../hooks/useApi";
 
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-const createComment = async (formData) => {
-    const response = await axios.post(API_URL, {
-        name: formData.name,
-        email: formData.email,
-        feedback: formData.comment,
-    });
-
-    return response.data;
-};
-
 export default function CommentForm() {
-    const { user } = useContext(ProfileContext);
+    const { loading, error, request } = useApi();
+    const user = useSelector((state) => state.user.user);
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: "",
@@ -53,15 +44,22 @@ export default function CommentForm() {
         }
 
         try {
-            const res = await createComment(formData);
-            console.log("Saved to DB:", res);
+            await request({
+                method: "POST",
+                url: API_URL,
+                data: {
+                    name: formData.name,
+                    email: formData.email,
+                    feedback: formData.comment,
+                },
+            });
 
             setFormData({ name: "", email: "", comment: "" });
             navigate("/comments");
         } catch (err) {
-            console.error("Error saving comment:", err);
             alert("Something went wrong while saving your comment");
         }
+
     };
 
 
@@ -111,9 +109,12 @@ export default function CommentForm() {
                     />
                 </label>
 
-                <button type="submit" className="form-submit-btn">
-                    Submit
+                <button type="submit" className="form-submit-btn" disabled={loading}>
+                    {loading ? "Sending..." : "Submit"}
                 </button>
+
+                {error && <p className="status-msg error">{error}</p>}
+
             </form>
         </div>
     );

@@ -96,3 +96,19 @@
   margin: 0;
 }
 
+.theme-light .line {
+  background: #00000055;
+}
+
+.theme-light .dot {
+  background: #333333;
+}
+
+.theme-light .about-title {
+  color: #333333;
+  text-shadow: 0 0 8px #26028855;
+}
+
+.theme-light .nav-link {
+  color: #0b1020;
+}

@@ -1,16 +1,19 @@
-import React from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "../../styles/Common.css";
 import { IoIosCheckmark } from "react-icons/io";
-import { useContext } from "react";
-import { ProfileContext } from "../common/ProfileContext";
+import { useSelector } from "react-redux";
 import icon from "../../assets/icon.png";
 import logo from "../../assets/logo.png";
+import logoNegative from "../../assets/logo-negative.png";
+import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 
-export default function Header() {
+
+
+export default function Header({ theme, toggleTheme }) {
   const location = useLocation();
   const navigate = useNavigate();
-  const { user } = useContext(ProfileContext);
+  const user = useSelector((state) => state.user?.user);
+  
 
   const goToSection = (id) => {
     if (location.pathname !== "/") {
@@ -24,7 +27,7 @@ export default function Header() {
     <header className="custom-header">
       <nav className="nav-left">
         <button className="nav-link" onClick={() => goToSection("title")}>
-          <img src={logo} alt="home" className="img-logo" />
+          <img src={theme === "dark" ? logo : logoNegative } alt="home" className="img-logo" />
         </button>
 
         <button className="nav-link" onClick={() => goToSection("about")}>
@@ -37,6 +40,12 @@ export default function Header() {
       </nav>
 
       <nav className="nav-right">
+
+        <button className="nav-link" onClick={toggleTheme}>
+          {theme === "dark" ? <FaToggleOff /> : <FaToggleOn />}
+        </button>
+
+
         <NavLink
           to="/comments"
           className={({ isActive }) =>

@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
-import { ProfileContext } from "../common/ProfileContext";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/userSlice";
 import ProfileForm from "./ProfileForm";
 
 export default function Login() {
-  const { login } = useContext(ProfileContext);
+  const dispatch = useDispatch();
   const [name, setname] = useState("");
   const [email, setEmail] = useState("");
 
@@ -11,10 +12,12 @@ export default function Login() {
     e.preventDefault();
     if (!name.trim() || !email.trim()) return;
 
-    login({
-      name: name.trim(),
-      email: email.trim(),
-    });
+    dispatch(
+      login({
+        name: name.trim(),
+        email: email.trim(),
+      })
+    );
   };
 
   return (

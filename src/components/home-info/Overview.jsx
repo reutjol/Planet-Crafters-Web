@@ -65,12 +65,8 @@ export default function PlanetAutoSwitcher() {
         </p>
 
         <div className="store-container">
-          <a href="#">
             <img src={gg} alt="Google Play" className="store-img" />
-          </a>
-          <a href="#">
             <img src={as} alt="App Store" className="store-img" />
-          </a>
         </div>
       </div>
     </section>

@@ -1,9 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
-import { ProfileContext } from "../common/ProfileContext";
+import React, { useEffect, useState } from "react";
 import ProfileForm from "./ProfileForm";
+import { useDispatch, useSelector } from "react-redux";
+import { updateProfile, logout } from "../../store/userSlice";
 
 export default function Connect() {
-  const { user, update, logout } = useContext(ProfileContext);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
 
   const [name, setname] = useState(user?.name ?? "");
   const [email, setEmail] = useState(user?.email ?? "");
@@ -15,11 +17,13 @@ export default function Connect() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    update({
-      name: name.trim(),
-      email: email.trim(),
-    });
-  };
+    dispatch(
+      updateProfile({
+        name: name.trim(),
+        email: email.trim(),
+      })
+    );
+  }
 
   return (
     <ProfileForm
@@ -31,7 +35,8 @@ export default function Connect() {
       setEmail={setEmail}
       onSubmit={onSubmit}
       submitText="Save"
-      onLogout={logout}
-    />
+      onLogout={() => dispatch(logout())
+
+      } />
   );
 }

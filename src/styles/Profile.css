@@ -7,7 +7,11 @@
   justify-content: center;
   gap: 56px;          
   padding: 0 6%;
-  color: #fff;
+  color: #e7e7e7;
+}
+
+.theme-light .login-page {
+  color: #333333;
 }
 
 .login-left {
@@ -56,7 +60,11 @@
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.06);
   outline: none;
-    color: #fff;
+  color: #ffffff;
+}
+.theme-light .login-input {
+  border: 1px solid #ccc;
+  color: #000;
 }
 
 .login-input:focus {
