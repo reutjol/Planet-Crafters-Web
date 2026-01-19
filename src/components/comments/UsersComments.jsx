@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/Comments.css";
-import { useFetch } from "../hooks/useFetch.js";
+import { useFetch } from "../../hooks/useFetch.js";
 
 const API_URL = process.env.REACT_APP_API_URL;
 

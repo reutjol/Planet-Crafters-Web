@@ -64,6 +64,10 @@
   text-align: center; 
 }
 
+.theme-light .notFound {
+  color: #333333;
+}
+
 .title-404 {
   font-size: 4rem;
   font-family: "Bungee"

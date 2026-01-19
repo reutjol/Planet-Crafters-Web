@@ -1,7 +1,7 @@
 import GameTitle from "../components/home-info/GameTitle";
 import About from "../components/home-info/About";
 import Overview from "../components/home-info/Overview";
-import "../styles/Screens.css";
+import "../styles/pages.css";
 import React, { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -41,7 +41,9 @@ export default function HomeScreen() {
       { threshold: 0.4 }
     );
 
-    refs.forEach((r) => r.current && observer.observe(r.current));
+    refs.forEach((r) => {
+      if (r.current) observer.observe(r.current);
+    });
     return () => observer.disconnect();
   }, []);
 

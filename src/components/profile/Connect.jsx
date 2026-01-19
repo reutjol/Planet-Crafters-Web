@@ -7,11 +7,11 @@ export default function Connect() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
 
-  const [name, setname] = useState(user?.name ?? "");
+  const [name, setName] = useState(user?.name ?? "");
   const [email, setEmail] = useState(user?.email ?? "");
 
   useEffect(() => {
-    setname(user?.name ?? "");
+    setName(user?.name ?? "");
     setEmail(user?.email ?? "");
   }, [user]);
 
@@ -31,7 +31,7 @@ export default function Connect() {
       subtitle="Update your details anytime."
       name={name}
       email={email}
-      setname={setname}
+      setName={setName}
       setEmail={setEmail}
       onSubmit={onSubmit}
       submitText="Save"

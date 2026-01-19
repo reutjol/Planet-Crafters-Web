@@ -5,7 +5,7 @@ import ProfileForm from "./ProfileForm";
 
 export default function Login() {
   const dispatch = useDispatch();
-  const [name, setname] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
   const onSubmit = (e) => {
@@ -26,7 +26,7 @@ export default function Login() {
       subtitle="Enter your identity to stay connected."
       name={name}
       email={email}
-      setname={setname}
+      setName={setName}
       setEmail={setEmail}
       onSubmit={onSubmit}
       submitText="Login"

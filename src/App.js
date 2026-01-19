@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import Header from "./components/common/Header";
 import HomeScreen from "./pages/HomeScreen";
 import CommentsScreen from "./pages/CommentsScreen";
@@ -9,7 +9,7 @@ import NotFound from "pages/NotFoundScreen";
 import { Routes, Route } from "react-router-dom";
 import { store } from "store/store";
 import { Provider } from "react-redux";
-import { useLocalStorage } from "./components/hooks/useLocalStorage";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 function App() {
   const [theme, setTheme] = useLocalStorage("theme", "dark");

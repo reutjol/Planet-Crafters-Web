@@ -7,8 +7,6 @@ import logo from "../../assets/logo.png";
 import logoNegative from "../../assets/logo-negative.png";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 
-
-
 export default function Header({ theme, toggleTheme }) {
   const location = useLocation();
   const navigate = useNavigate();

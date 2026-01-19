@@ -6,8 +6,8 @@ import img3 from "../../assets/Planet3.png";
 import img4 from "../../assets/Planet4.png";
 import img5 from "../../assets/Planet5.png";
 import img6 from "../../assets/Planet6.png";
-import gg from "../../assets/gg.png";
-import as from "../../assets/as.png";
+import googlePlay from "../../assets/gg.png";
+import appStore from "../../assets/as.png";
 
 const planets = [
   { id: 1, src: img1 },
@@ -65,8 +65,8 @@ export default function PlanetAutoSwitcher() {
         </p>
 
         <div className="store-container">
-            <img src={gg} alt="Google Play" className="store-img" />
-            <img src={as} alt="App Store" className="store-img" />
+            <img src={googlePlay} alt="Google Play" className="store-img" />
+            <img src={appStore} alt="App Store" className="store-img" />
         </div>
       </div>
     </section>

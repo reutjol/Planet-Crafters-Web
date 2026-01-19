@@ -8,7 +8,7 @@ export default function ProfileForm({
   subtitle,
   name,
   email,
-  setname,
+  setName,
   setEmail,
   onSubmit,
   submitText,
@@ -29,7 +29,7 @@ export default function ProfileForm({
                 value={name}
                 placeholder="Your full name"
                 minLength={3}
-                onChange={(e) => setname(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
             </label>
             

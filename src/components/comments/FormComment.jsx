@@ -4,7 +4,7 @@ import "../../styles/Comments.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useApi } from "../hooks/useApi";
+import { useApi } from "../../hooks/useApi";
 
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -36,7 +36,6 @@ export default function CommentForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form data:", formData);
 
         if (Object.values(formData).some(value => value.trim() === "")) {
             alert("Fill all fields");

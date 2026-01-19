@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Screens.css";
+import "../styles/pages.css";
 import Login from "../components/profile/Login.jsx";
 import Connect from "../components/profile/Connect.jsx";
 import { useSelector } from "react-redux";

@@ -8,14 +8,14 @@
 }
 
 .theme-light {
-  background-image: url("./assets/bg-negative.png");
+  background-image: url("../assets/bg-negative.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .theme-dark {
-  background-image: url("./assets/bg.webp");
+  background-image: url("../assets/bg.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
